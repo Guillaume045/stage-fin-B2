@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Stage - Bachelor 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            text-align: center;
+            padding: 1px 0;
+        }
+        header h1 {
+            color: white;
+            margin: 0;
+            padding: 10px;
+        }
+        nav {
+            background: #555;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        .posts, .about, .contact {
+            margin-bottom: 40px;
+        }
+        .post {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .post-title {
+            color: #555;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .post-content img.float-right {
+            float: right;
+            margin: 0 0 10px 10px;
+            max-width: 50%;;
+            height: auto;
+        }
+        .post-content {
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 1px 0;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .cv-image {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Styles pour la section contact */
+        .contact-content {
+            margin-bottom: 20px;
+        }
+        .contact-content img {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .map-container {
+            margin-top: 20px;
+            width: 100%;
+            height: 300px;
+        }
+        .map {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('nav a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('main > section').forEach(function(section) {
+                        section.classList.add('hidden');
+                    });
+                    const targetId = e.target.getAttribute('href').substring(1);
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Blog de Stage - Bachelor 2</h1>
+    </header>
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+        <a href="#posts">Articles</a>
+    </nav>
+    <main>
+        <!-- Section About -->
+        <section id="about" class="about">
+            <h2>À propos</h2>
+            <p>Bienvenue sur mon blog de stage. Je m'appelle Guillaume Lanfroid-Nazac, étudiant en Bachelor 2. Voici une présentation de mon parcours et de mon profil.</p>
+            <ul>
+                <li>Curriculum Vitae:
+                    <p>
+                        <a href="file:///C:/Users/lanfr/OneDrive/Bureau/CV.pdf" target="_blank">
+                            <img width="200" src="file:///C:/Users/lanfr/OneDrive/Bureau/CV.jpg" alt="CV de [Votre Nom]" class="cv-image">
+                        </a>
+                    </p> 
+                </li>
+                <li>Parcours: Je suis titulaire d'un Baccalauréat STI2D avec l'option Systèmes d'Information et Numérique, et je suis actuellement en deuxième année de Bac+2 en Informatique, avec une spécialisation en cours vers la Robotique et la Mécatronique.</li>
+                <p></p>
+                <li>Profil LinkedIn: <a href="https://www.linkedin.com/in/guillaume-lanfroid-nazac-85578124a/" target="_blank">Voir mon profil LinkedIn</a></li>
+                </p>
+            </ul>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact hidden">
+            <h2>Présentation de l'entreprise</h2>
+            <div class="contact-content">
+                <p>Présentation de l'entreprise où j'ai effectué mon stage. Vous trouverez ici des informations sur l'entreprise, son activité, et l'environnement de travail.</p>
+                <ul>
+                    <img src="https://www.robotech-and-co.fr/wp-content/uploads/2024/01/robotech-co-robot-de-service-bordeaux-LOGO-3.png" alt="Logo de l'entreprise">
+                    <li>Nom de l'entreprise: Robotech & Co</li>
+                    <li>Localisation: 41 Rue Edmond Besse, 33300 Bordeaux</li>
+                    <li>Activité: Robotique</li>
+                    <li>Contexte de travail: Robotech & Co est une entreprise innovante spécialisée dans la distribution de robots de service et de nettoyage. Leur mission est de fournir des solutions robotiques pour divers secteurs comme les restaurants, commerces, hôpitaux, et hôtels. L'entreprise propose également des services de leasing, de formation, d'installation, et un service après-vente pour garantir une utilisation optimale des robots.</li>
+                </ul>
+            </div>
+            <div class="map-container">
+                <iframe class="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11360.631688625785!2d-0.550601151604784!3d44.887540547852775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55291e17762489%3A0x5af8f9034113009e!2s41%20Rue%20Edmond%20Besse%2C%2033300%20Bordeaux!5e0!3m2!1sen!2sfr!4v1692985406631!5m2!1sen!2sfr"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Section Posts -->
+        <section id="posts" class="posts hidden">
+            <h2>Articles</h2>
+            <article class="post">
+                <h3 class="post-title">Mon stage de fin d’année</h3>
+                <div class="post-content">
+                    <p>Dans le cadre de ma formation, j'ai eu l'opportunité de réaliser un stage de 6 semaines, qui a débuté le 2 juillet 2024 et s'est terminé le 5 août 2024. Ce stage marque une étape importante dans la validation de mon année scolaire, me permettant d'acquérir des compétences pratiques et de me préparer pour passer à la prochaine étape de mon parcours académique.</p>
+                    <p>Je tiens également à préciser que, par respect pour l’entreprise qui m’a accueillie, Robotech & Co, je ne partagerai pas d’informations sensibles ou confidentielles qui pourraient lui nuire. Mon objectif est de mettre en lumière les apprentissages et les expériences vécues, tout en respectant la confidentialité de l'entreprise.</p>
+                    <p>J'ai réalisé mon stage chez Robotech & Co, une entreprise créée par un restaurateur pour répondre au manque de personnel dans la restauration. Spécialisée dans la commercialisation de robots pour des tâches telles que le service, le nettoyage ou la publicité, Robotech & Co s’efforce de combler les besoins de main-d'œuvre dans ce secteur.</p>
+                    <p>En tant que stagiaire, j'ai eu l'opportunité de découvrir ces produits innovants et de contribuer à améliorer l'attractivité de l'un des robots destiné à la publicité.</p>
+                </div>
+            </article>
+            <article class="post">
+                <h3 class="post-title">Découverte de KettyBot</h3>
+                <div class="post-content">
+                    <img width="220" src="https://www.robotech-and-co.fr/wp-content/uploads/2024/02/robotech-co-robot-de-service-bordeaux-remarques.png" alt="Hub de rafraîchissement" class="float-right">
+                    <p>Lors de mon stage chez Robotech & Co, j'ai eu l'occasion de découvrir KettyBot, un robot de livraison et de communication dans divers environnements. Ce robot, au design compact, est capable de se déplacer dans des espaces aussi étroits que 55 cm de large, ce qui le rend très pratique pour les milieux encombrés.</p>
+                    <p>
+                        Quelques points intéressants sur KettyBot :
+                        <li>Adaptation pratique entre les plateaux amovibles et le compartiment de stockage </li>
+                        <li>Navigation précise grâce à son système de double laser et vision </li>
+                        <li>Mode croisière pour proposer des boissons et snacks </li>
+                        <li>Autonomie de plus de 8 heures, avec une recharge rapide en 4,5 heures </li>
+                    </p>
+                    <p>
+                        Détails techniques :
+                        <li>Dimensions : 435 x 450 x 1120 mm </li>
+                        <li> Poids : 38 kg </li>
+                        <li> Capacité de chargement : 30 kg </li>
+                        <li> Vitesse maximale : 1,2 m/s (ajustable) </li>
+                        <li> Espace requis : ≥ 55 cm </li>
+                        <li> Dimensions de l’écran : 18,5" </li>
+                        
+                    </p>
+                </div>
+            </article>
+            <article class="post">
+                <h3 class="post-title">Découvrez BellaBot</h3>
+                <div class="post-content">
+                    <img width="400" src="https://www.robotech-and-co.fr/wp-content/uploads/2024/02/robotech-co-robot-de-service-bordeaux-bellabot-slide-1-1.png" alt="Hub de rafraîchissement" class="float-right">
+                    <p>Lors de mon stage chez Robotech & Co, j'ai découvrir BellaBot, un robot de livraison au design innovant en forme de chat. Ce robot interactif est conçu pour améliorer les services dans les restaurants, hôtels et cafés grâce à son intelligence artificielle avancée et sa navigation autonome.</p>
+                    <p>
+                        Fonctionnalités clés :
+                        <li> Écran tactile à l'avant pour l'interaction et affichage de contenu textuel à l'arrière</li>
+                        <li> 4 plateaux connectés (10 kg par plateau) pour faciliter le service</li>
+                        <li>Autonomie de 12 à 24 heures, permettant un fonctionnement continu</li>
+                        <li>Système de navigation SLAM laser et visuel pour une adaptation flexible aux différents environnements</li>
+                        <li>Capteurs 3D pour détecter et éviter les obstacles avec une réactivité de 0,5 seconde</li>
+                        <li>Interactions vocales amusantes avec des expressions exclusives de type "chat"</li>
+                    </p>
+                    <p>
+                        Critères techniques :
+                        <li>Dimensions : 565 x 537 x 1290 mm</li>
+                        <li>Poids : 55 kg</li>
+                        <li>Matériau : ABS/alliage d'aluminium de qualité aéronautique</li>
+                        <li>Temps de charge : 4,5 heures</li>
+                        <li>Vitesse de croisière : Ajustable</li>
+                    </p>
+                    <p>
+                        BellaBot se distingue par son design, ses capacités de navigation avancées et ses interactions ludiques, rendant les services.</p>
+                </div>
+            </article>
+            <article class="post">
+                <h3 class="post-title">Découvrez le J40</h3>
+                <div class="post-content">
+                    <img src="https://www.robotech-and-co.fr/wp-content/uploads/2024/07/robotech-co-robot-de-service-bordeaux-Hub-de-rafraichissement-4-en-1-avec-installation-sans-effort-scaled.jpg" alt="Hub de rafraîchissement" class="float-right">
+                    <p>Lors de mon stage chez Robotech & Co, j'ai découvert le J40, un robot de nettoyage conçu pour le nettoyage de grandes surfaces. Grâce à son système 5 en 1, le J40 combine balayage, nettoyage humide, récurage, aspiration et nettoyage à sec, offrant une solution complète.</p>
+                    <p>
+                        Fonctionnalités clés :
+                        <li>Polyvalence 5 en 1 : Balayage, nettoyage à sec, nettoyage humide, récurage et aspiration</li>
+                        <li>Conception multi-brosses adaptée à différents types de sols</li>
+                        <li>Navigation autonome et planification des itinéraires pour un nettoyage efficace des grandes zones commerciales</li>
+                        <li>Technologie IA intégrée</li>
+                    </p>
+                    <p>
+                        Critères techniques :
+                        <li>Performance de nettoyage : 1800 m²/h (max)</li>
+                        <li>Vitesse de fonctionnement maximale : 1,0 m/s</li>
+                        <li>Temps de charge : 2h30</li>
+                        <li>Autonomie de la batterie : 3-8h</li>
+                        <li>Capacité du réservoir d'eau propre : 8L</li>
+                        <li>Capacité du réservoir d'eau récupérée : 8L</li>
+                        <li>Largeur de nettoyage : 410 mm (lavage), 420 mm (nettoyage), 600 mm (balayage)</li>
+                        <li>Capacité d'escalade : 12,5 % (7,1°)</li>
+                        <li>Dépassement d'obstacles : 20 mm</li>
+                        <li>Niveau de bruit en fonctionnement : ≤ 75 dB</li>
+                    </p>
+                    <p>
+                        Le J40, est conçu pour optimiser le nettoyage dans divers environnements commerciaux grâce à sa conception et ses fonctionnalités avancées.</p>
+                </div>
+            </article>
+            <article class="post">
+                <h3 class="post-title">Projet majeur réalisé</h3>
+                <div class="post-content">
+                    <p>[Votre texte ici]</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Blog de Stage. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
